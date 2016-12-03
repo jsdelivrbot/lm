@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <title>main</title>
+  <link rel="stylesheet" href="css/norm.css">
+  <link rel="stylesheet" href="css/icon.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+<div class="cont-full top-bg">
+  <header class="cont top-nav">
+	<a href="" class="logo"></a>
+	<nav class="">
+	  <ul class="nav">
+		<li><a href=""><i class="i-map-pin"></i>Одесса</a></li>
+		<li><a href="">Как это работает? </a></li>
+		<li><a href="">Контакты</a></li>
+		<li><a href="">О нас </a></li>
+		<li><a href="">Помощь</a></li>
+	  </ul>
+	  <ul class="auth">
+		<li><a href="">Войти</a></li>
+	  </ul>
+	</nav>
+	
+	
+	<div id="mob_bg"></div>
+	<div id="mobile_nav">
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	</div>
+  </header>
+</div>
+
+
+<main>
+  <div class="loader-container">
+	
+	
+	<div class="loader">
+	  <div class="cup"></div>
+	  <div class="line"></div>
+	  <div class="heart"></div>
+	</div>
+  
+  </div>
+</main>
+
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+	$('#search_city').select2({
+	  placeholder: 'Введите название услугфи'
+	});
+	$('#search_street').select2({
+	  placeholder: 'Выберите район / ст. метро'
+	});
+	
+	
+	var frameHeight = $(window).height();
+	
+	$(window).resize(function () {
+	  
+	  if ($(window).width() > 768) {
+		$(".top-nav nav").show();
+		
+	  }
+	});
+	
+	
+	$('#mobile_nav').on("click", function () {
+	  var n = $('.top-nav nav'),
+					 m = $(this),
+					 bd = $('body'),
+					 bg = $('#mobile_nav');
+	  
+	  
+	  if (n.hasClass("nav-opener")) {
+		n.removeClass('nav-opener');
+		
+		m.removeClass('open');
+		bd.removeClass('no-scroll');
+		
+		
+	  } else {
+		n.addClass('nav-opener');
+		
+		m.addClass('open');
+		bd.addClass('no-scroll');
+		
+	  }
+	});
+	
+  });
+</script>
+</html>

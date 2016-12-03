@@ -1,0 +1,11 @@
+.git/
+    .gitignore
+    node_modules/
+.idea/workspace.xml
+node_modules/console-control-strings/README.md~
+node_modules/gauge/CHANGELOG.md~
+node_modules/gauge/README.md~
+node_modules/in-publish/README.md~
+node_modules/node-gyp/node_modules/npmlog/CHANGELOG.md~
+node_modules/normalize-package-data/test/normalize.js~
+node_modules/npmlog/CHANGELOG.md~
