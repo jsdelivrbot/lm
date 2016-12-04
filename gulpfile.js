@@ -8,6 +8,7 @@ const del = require('del');
 const newer = require('gulp-newer');
 const remember = require('gulp-remember');
 const autoprefixer = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
@@ -27,6 +28,16 @@ gulp.task('scss', function(){
 });
 
 
+gulp.task('compress', function () {
+    return gulp.src('frontend/js/*.js', {since: gulp.lastRun('compress')})
+        .pipe(uglify())
+        .pipe(gulp.dest('public/js'))
+
+
+
+});
+
+
 
 gulp.task('assets', function(){
     return gulp.src('frontend/assets/**', {since: gulp.lastRun('assets')})
@@ -41,11 +52,12 @@ gulp.task('clean', function(){
 
 gulp.task('build', gulp.series(
     'clean',
-    gulp.parallel('scss', 'assets')));
+    gulp.parallel('scss', 'compress', 'assets')));
 
 
 gulp.task('watch', function(){
     gulp.watch('frontend/scss/**/*.*', gulp.series('scss'));
+    gulp.watch('frontend/js/**/*.*', gulp.series('compress'));
     gulp.watch('frontend/assets/**/*.*', gulp.series('assets'));
 });
 gulp.task('serve', function(){
