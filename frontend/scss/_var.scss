@@ -1,6 +1,7 @@
 //@import 'https://fonts.googleapis.com/css?family=Exo+2:300,400,500,600,700&subset=cyrillic';
 
 $btn_c: #fedc00;
+$w: #ffffff;
 $bg_c1: #3bc8ff;
 $bg_c2: #00a6e6;
 $bg_footer: #003144;
@@ -60,6 +61,32 @@ $fr: 'Roboto', sans-serif;
   }
 }
 
+
+@mixin button($bc:$bg_c2, $bgc:$w, $width: 200px, $h:40px){
+  font:400 16px $ff;
+  display: block;
+  max-width:$width;
+  width: 100%;
+  height:$h;
+  line-height:$h;
+  text-align: center;
+  border:1px solid $bgc;
+
+  //border-color:;
+  background-color: $bc;
+  color: $bgc;
+  cursor: pointer;
+  @include br(25px);
+  @include trans(.3s);
+  &:hover{
+    border-color:$bc;
+    background-color: $bgc;
+    color: $bc;
+  }
+
+
+
+}
 //____________END MIXINS
 //
 .cont {

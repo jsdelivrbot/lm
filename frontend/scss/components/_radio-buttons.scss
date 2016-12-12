@@ -14,12 +14,12 @@
 [type="radio"]:not(:checked) + label,
 [type="radio"]:checked + label {
   position: relative;
-  padding-left: 35px;
+  //padding-left: 35px;
   cursor: pointer;
   display: inline-block;
-  height: 25px;
+  //height: 25px;
   line-height: 25px;
-  font-size: 1rem;
+  //font-size: 1rem;
   transition: .28s ease;
 
   -khtml-user-select: none; /* webkit (konqueror) browsers */

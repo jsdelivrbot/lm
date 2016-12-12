@@ -1,1 +1,1 @@
-function initTab(e,i){$(e+">div").hide(),$(e+">div:first").show(),$(i+" li").click(function(){$(i+" li").removeClass("active"),$(this).addClass("active"),$(e+">div").hide();var c=$(this).index();$(e+">div:eq("+c+")").fadeIn()})}$("#search_city").select2({placeholder:"Введите название услугфи"}),$("#search_street").select2({placeholder:"Выберите район / ст. метро"});
+$("#search_city").select2({placeholder:"Введите название услугфи"}),$("#search_street").select2({placeholder:"Выберите район / ст. метро"});

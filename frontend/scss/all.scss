@@ -8,6 +8,11 @@
   display: block !important;
 }
 
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
 h2 {
   font-family: $ff;
   color: #000;
@@ -54,6 +59,162 @@ h3 {
       display: inline-block;
       color: #898b8d;
       font: 400 12px/24px $fr;
+    }
+  }
+}
+
+//
+//
+//
+.pagination {
+  //outline: 1px solid green;
+  padding: 30px 0;
+  text-align: center;
+  width: 100%;
+  font-size: 0;
+  li {
+    //outline: 1px solid red;
+    display: inline-block;
+    width: 35px;
+    line-height: 35px;
+    margin: 0 5px;
+    vertical-align: middle;
+    font-size: 16px;
+    &:hover {
+      a {
+        font-weight: 700;
+        background-color: $bg_c2;
+        color: $w;
+        -ms-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+    }
+    a {
+      font-size: 16px;
+      color: #405876;
+      font-weight: 400;
+      width: 35px;
+      line-height: 35px;
+      //color: $txt_c;
+      display: block;
+      @include br(3px);
+      @include trans(.2s);
+    }
+    &.active {
+      a {
+        background-color: $bg_c2;
+        color: $w;
+      }
+
+    }
+
+    &:first-of-type {
+      width: auto;
+      margin-right: 55px;
+      display: inline-block;
+      a {
+        width: auto;
+        i {
+          vertical-align: sub;
+          font-size: 22px;
+          color: $txt_c;
+        }
+      }
+      &:hover {
+        //position: relative;
+        a {
+          font-weight: 400;
+          color: #000;
+          background-color: transparent;
+          -ms-transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+
+        }
+
+      }
+    }
+    &:last-of-type {
+      @extend :first-of-type;
+      margin-left: 55px;
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pagination {
+    padding: 15px 0;
+    li {
+      margin: 0 5px;
+      &:hover {
+        a {
+          font-weight: 700;
+          background-color: transparent;
+          -ms-transform: scale(1);
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+      &.active {
+        a {
+          background-color: $bg_c2;
+          color: $w;
+        }
+
+      }
+      &:first-of-type {
+        margin-right: 10px;
+        display: inline-block;
+        a {
+          i {
+            font-size: 18px;
+          }
+          span {
+            display: none;
+          }
+        }
+        &:hover {
+          //position: relative;
+          a {
+
+            background-color: transparent;
+            -ms-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+
+          }
+
+        }
+
+      }
+      &:last-of-type {
+        margin-left: 10px;
+        a {
+          i {
+            font-size: 18px;
+          }
+          span {
+            display: none;
+          }
+        }
+        &:hover {
+
+          a {
+
+            background-color: transparent;
+            -ms-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+
+          }
+
+        }
+
+
+        margin-right: 0;
+      }
     }
   }
 }
@@ -143,22 +304,59 @@ h3 {
 
   @include clr;
 }
-div[class^="col--"]{
+
+div[class^="col--"] {
   //outline:1px solid blue;
   float: left;
 }
-.col--1 {width: 8.33%;}
-.col--2 {width: 16.66%;}
-.col--3 {width: 25%;}
-.col--4 {width: 33.33%;}
-.col--5 {width: 41.66%;}
-.col--6 {width: 50%;}
-.col--7 {width: 58.33%;}
-.col--8 {width: 66.66%;}
-.col--9 {width: 75%;}
-.col--10 {width: 83.33%;}
-.col--11 {width: 91.66%;}
-.col--12 {width: 100%;}
+
+.col--1 {
+  width: 8.33%;
+}
+
+.col--2 {
+  width: 16.66%;
+}
+
+.col--3 {
+  width: 25%;
+}
+
+.col--4 {
+  width: 33.33%;
+}
+
+.col--5 {
+  width: 41.66%;
+}
+
+.col--6 {
+  width: 50%;
+}
+
+.col--7 {
+  width: 58.33%;
+}
+
+.col--8 {
+  width: 66.66%;
+}
+
+.col--9 {
+  width: 75%;
+}
+
+.col--10 {
+  width: 83.33%;
+}
+
+.col--11 {
+  width: 91.66%;
+}
+
+.col--12 {
+  width: 100%;
+}
 
 .in-gr {
   width: 100%;
